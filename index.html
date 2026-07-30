@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Welcome to YikeBeads</title>
+<style>
+body{margin:0;background:#F7F4EF;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#3f4b46}
+.wrap{max-width:760px;margin:auto;padding:28px}
+.card{background:#fff;border-radius:18px;padding:22px;margin:18px 0;box-shadow:0 8px 24px rgba(0,0,0,.06)}
+h1,h2{margin:.2em 0}
+.logo{width:120px;display:block;margin:0 auto 16px}
+.center{text-align:center}
+.btn{display:inline-block;background:#6F8B7E;color:#fff;padding:12px 18px;border-radius:999px;text-decoration:none;border:none;font-size:16px;cursor:pointer}
+.small{color:#777}
+.code{font-size:20px;font-weight:700}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="center">
+<img class="logo" src="logo.png" alt="Logo">
+<h1>Welcome to YikeBeads</h1>
+<p>欢迎来到 YikeBeads</p>
+<p><em>一颗一颗，拼虚度成形。</em></p>
+</div>
+
+<div class="card">
+<h2>📶 Wi‑Fi</h2>
+<p><strong>Network</strong></p>
+<p class="code">TP-Link_ACB8</p>
+<p><strong>Password</strong></p>
+<p id="pwd" class="code">••••••••</p>
+<button class="btn" onclick="togglePwd()">👁️ 显示密码</button>
+<button class="btn" onclick="copyPwd()">📋 复制密码</button>
+<p id="msg" class="small"></p>
+</div>
+
+<div class="card">
+<h2>☕ 店内体验</h2>
+<p>🍵 免费零食 & 饮料</p>
+<p>🅿️ 免费停车</p>
+<p>🧩 290+ 色融合豆</p>
+<p>🕚 11:00–21:00</p>
+</div>
+
+<div class="card center">
+<h2>📕 小红书</h2>
+<a class="btn" href="https://xhslink.cn/m/ve2hwB1fj8" target="_blank">打开小红书主页</a>
+</div>
+</div>
+
+<script>
+const realPwd="fV25C4Rj";
+let shown=false;
+function togglePwd(){
+ shown=!shown;
+ document.getElementById("pwd").textContent=shown?realPwd:"••••••••";
+}
+function copyPwd(){
+ navigator.clipboard.writeText(realPwd).then(()=>{
+ document.getElementById("msg").textContent="✅ 密码已复制";
+ });
+}
+</script>
+</body>
+</html>
